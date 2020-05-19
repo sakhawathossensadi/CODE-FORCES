@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int m,f,b,len,mid;
+    char str[100];
+    gets(str);
+    len=strlen(str);
+    if(len<3)
+    {
+        puts(str);
+    }
+    else
+    {
+        if(len%2==0)
+        {
+            mid=len/2;
+            mid=mid-1;
+            f=mid+1;
+            b=mid-1;
+            printf("%c",str[mid]);
+            while(1)
+            {
+                printf("%c",str[f]);
+                f++;
+                printf("%c",str[b]);
+                b--;
+                if(b<0)
+                {
+                    break;
+                }
+            }
+            printf("%c\n",str[f]);
+        }
+        else
+        {
+            mid=len/2;
+            f=mid+1;
+            b=mid-1;
+            printf("%c",str[mid]);
+            while(1)
+            {
+                printf("%c",str[f]);
+                f++;
+                printf("%c",str[b]);
+                b--;
+                if(b<0)
+                {
+                    break;
+                }
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}
