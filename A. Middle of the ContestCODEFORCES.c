@@ -1,0 +1,162 @@
+#include<stdio.h>
+int main()
+{
+    int h1,m1,h2,m2,dm,midm;
+    int dh,htm,divh,mod,fh,fm;
+    char ch1,ch2;
+    scanf("%d",&h1);
+    scanf("%c",&ch1);
+    scanf("%d",&m1);
+    scanf("%d",&h2);
+    scanf("%c",&ch2);
+    scanf("%d",&m2);
+    if(h1==h2)
+    {
+        dm=m2+m1;
+        midm=dm/2;
+        if(h1<10)
+        {
+            printf("0%d:",h1);
+        }
+        else
+        {
+            printf("%d:",h1);
+        }
+        if(midm<10)
+        {
+            printf("0%d\n",midm);
+        }
+        else
+        {
+            printf("%d\n",midm);
+        }
+    }
+    else
+    {
+
+        if(m1==m2)
+        {
+            dh=h2-h1;
+            htm=dh*60;
+            midm=htm/2;
+            divh=midm/60;
+            mod=midm%60;
+            fh=h1+divh;
+            fm=m1+mod;
+            if(fm==60)
+            {
+                fm=0;
+                fh=fh+1;
+            }
+            if(fh<10)
+            {
+                printf("0%d:",fh);
+            }
+            else
+            {
+                printf("%d:",fh);
+            }
+            if(fm<10)
+            {
+                printf("0%d\n",fm);
+            }
+            else
+            {
+                printf("%d\n",fm);
+            }
+        }
+        else if(m1>m2)
+        {
+            int c1,c2,tm,dm;
+            tm=0;
+            c1=h1;
+            c2=h2;
+            while(c1<c2)
+            {
+                tm=tm+60-m1;
+                tm=tm+m2;
+                if(c1<c2-1)
+                {
+                    dm=m1-m2;
+                    tm=tm+dm;
+                }
+                c1++;
+            }
+            midm=tm/2;
+            divh=midm/60;
+            mod=midm%60;
+            fh=h1+divh;
+            fm=m1+mod;
+
+            if(fm>=60)
+            {
+                fm=fm-60;
+                fh=fh+1;
+            }
+            if(fh<10)
+            {
+                printf("0%d:",fh);
+            }
+            else
+            {
+                printf("%d:",fh);
+            }
+            if(fm<10)
+            {
+                printf("0%d\n",fm);
+            }
+            else
+            {
+                printf("%d\n",fm);
+            }
+
+        }
+        else
+        {
+            int c1,c2,tm,dm;
+            tm=0;
+            c1=h1;
+            c2=h2;
+            while(c1<c2)
+            {
+                tm=tm+60-m1;
+                tm=tm+m2;
+                if(c1<c2-1)
+                {
+                    dm=m2-m1;
+                    tm=tm-dm;
+                }
+                c1++;
+            }
+
+            midm=tm/2;
+            divh=midm/60;
+            mod=midm%60;
+            fh=h1+divh;
+            fm=m1+mod;
+
+            if(fm>=60)
+            {
+                fm=fm-60;
+                fh=fh+1;
+            }
+            if(fh<10)
+            {
+                printf("0%d:",fh);
+            }
+            else
+            {
+                printf("%d:",fh);
+            }
+            if(fm<10)
+            {
+                printf("0%d\n",fm);
+            }
+            else
+            {
+                printf("%d\n",fm);
+            }
+        }
+    }
+    return 0;
+}
