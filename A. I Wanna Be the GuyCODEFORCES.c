@@ -1,0 +1,59 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,n,p,q,tl[222],ax[222],ay[222],flag=0;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        tl[i]=i;
+    }
+    scanf("%d",&p);
+    for(i=0;i<p;i++)
+    {
+        scanf("%d",&ax[i]);
+    }
+    scanf("%d",&q);
+    for(i=0;i<q;i++)
+    {
+        scanf("%d",&ay[i]);
+    }
+    for(i=0;i<p;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(tl[j]==ax[i])
+            {
+                tl[j]=-1;
+                break;
+            }
+        }
+    }
+    for(i=0;i<q;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(tl[j]==ay[i])
+            {
+                tl[j]=-1;
+                break;
+            }
+        }
+    }
+    for(i=1;i<=n;i++)
+    {
+        if(tl[i]!=-1)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+    {
+        printf("I become the guy.\n");
+    }
+    else
+    {
+        printf("Oh, my keyboard!\n");
+    }
+    return 0;
+}
